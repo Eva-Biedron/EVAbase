@@ -1,2 +1,2 @@
-# EVAbase
-SQL database for my personal natural history and 'art' collection
+# EVAbase: a personal collections database
+I need a relational database to catalog and track my personal natural history and art collection. The structure of EVAbase is drawn my own experience using Specify (https://www.specifysoftware.org/) and MCZbase (a modified ARCTOS collection management system, http://arctos.database.museum/) and my evolving understanding of databases. Currently, EVAbase consists of a specimen table and a linked accession table. My next steps will be to incorporate a locality table and review field names for compliance with Darwin Core terms (https://dwc.tdwg.org/list/). 
