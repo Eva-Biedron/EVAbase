@@ -4,8 +4,8 @@ I need a database to catalog and track my collection of fossils, minerals, and r
 
 Explanation of Contents:
 
-EVAbase_2022-1.txt      SQL code for cataloging specimens from 2022 (a backlog still exists).
+- EVAbase_2022-1.txt      SQL code for cataloging specimens from 2022 (a backlog still exists).
 
-EVAbase_2021-1.txt      SQL code to create accessions and specimen catalog tables, catalog specimens from 2021 (a backlog still exists).
+- EVAbase_2021-1.txt      SQL code to create accessions and specimen catalog tables, catalog specimens from 2021 (a backlog still exists).
 
-EvaBASE.db              SQLite database with accessions and specimen catalog tables.
+- EvaBASE.db              SQLite database with accessions and specimen catalog tables.
