@@ -1,0 +1,23 @@
+### Reformat and update Accessions Table
+# Add accessionType and accessionStartDate columns to track processed accession data. I cannot locate a controlled vocabulary for provenance data yet.
+
+ALTER TABLE Accessions
+ADD accessionType TEXT;
+
+ALTER TABLE Accessions
+ADD accessionStartDate DATE;
+
+# Update current records with new accession data
+UPDATE Accessions SET accessionType = 'Gift' where accessionNumber = 1;
+UPDATE Accessions SET accessionStartDate = '2021-12-01' where accessionNumber = 1;
+
+UPDATE Accessions SET accessionType = 'Gift' where accessionNumber = 2;
+UPDATE Accessions SET accessionStartDate = '2022-12-01' where accessionNumber = 2;
+
+# Enter accessions from 2020-2022.
+INSERT INTO Accessions(verbatimDate, VerbatimDonor, verbatimDescription, accessionType, accessionStartDate)
+	VALUES ('19 Oct 2020','Brandon Moore','A large handsample of the Ocean Picture Stone agate as a birthday present.','Gift','2020-10-19'),
+	('Christmas 2020','Brandon Moore','A large handsample of kyanite as a Christmas gift.','Gift','2020-12-25'),
+	('19 Oct 2022','Brandon Moore','A part and counterpart fossil fern for a birthday gift.','Gift','2022-10-19'),
+	('Christmas Eve 2022','Christian Moore','A fossil leave of moderate size- maybe a willow/Salix?','Gift','2022-12-24')
+;

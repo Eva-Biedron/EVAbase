@@ -1,7 +1,2 @@
 # EVAbase: a personal collections database
-I need a database to catalog and track my collection of fossils, minerals, and rocks. This SQLite database has two linked tables to hold accession and specimen data; eventually, I plan to include linked locality and agent date tables as extensions. 
-
-Explanation of Contents:
-- EVAbase_2022-1.txt: SQL code for cataloging specimens from 2022 (a backlog still exists).
-- EVAbase_2021-1.txt: SQL code to create accessions and specimen catalog tables, catalog specimens from 2021 (a backlog still exists).
-- EvaBASE.db: SQLite database with accessions and specimen catalog tables.
+I need a database to catalog and track my personal natural history and 'art' collection. The structure of EVAbase is drawn from my experience using Specify (https://www.specifysoftware.org/) and MCZbase (a modified ARCTOS collection management system, http://arctos.database.museum/) and my evolving understanding of relational databases. Currently, EVAbase consists of a specimen table and a linked accession table. My next steps will be to incorporate a locality table and review field names for compliance with Darwin Core terms (https://dwc.tdwg.org/list/). 

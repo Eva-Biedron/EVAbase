@@ -1,0 +1,27 @@
+### Reformat and update SpecimenCatalog
+# Begin to bring SpecimenCatalog table column names into alignment with Darwincore terms (https://dwc.tdwg.org/terms/#dwc:basisOfRecord). Catalog four new specimens to match accession records in EVAbase_2023-1.2.txt
+
+# Rename and update basisOfRecord terminology.
+ALTER TABLE SpecimenCatalog
+RENAME COLUMN specimenType TO basisOfRecord;
+
+UPDATE SpecimenCatalog
+SET basisOfRecord = 'FossilSpecimen'
+WHERE basisOfRecord = 'Fossil';
+
+UPDATE SpecimenCatalog
+SET basisOfRecord = 'MaterialSample'
+WHERE basisOfRecord = 'Mineral';
+
+INSERT INTO SpecimenCatalog(basisOfRecord, mineral, taxon, verbatimDescription, verbatimLocality, accessionNumber)
+    VALUES 
+    ('MaterialSample', 'Chalcedony, Silicated Serpentine, Limonite, Small amounts of agate, Country stone', 'NA', 'Ocean Picture Stone agate', 'British Columbia, Canada', '3'),
+    ('MaterialSample', 'Kyantite', 'NA', 'Large handsample of kyanite in quartz? crystals', 'NA', '4'),
+    ('FossilSpecimen', 'NA', 'Alethopteris sullivantii', 'Part and counterpart of fossil fern (n = 2)', 'Mazon Creek, Illinois', '5'),
+    ('FossilSpecimen', 'NA', 'Plantae',  'Fossil leave', 'NA', '6')
+;
+
+UPDATE SpecimenCatalog 
+SET additional number = MC142
+WHERE catalogNumber = 52;
+    

@@ -1,0 +1,48 @@
+CREATE TABLE Accessions(
+    accessionNumber INTEGER PRIMARY KEY,
+    verbatimDate,
+    verbatimDonor,
+    verbatimDescription
+); 
+
+INSERT INTO Accessions(verbatimDate, verbatimDonor, verbatimDescription)
+    VALUES ('December 1 - 25, 2021', 'Brandon Moore', 'Specimens from a mineral advent calendar');
+
+CREATE TABLE SpecimenCatalog(
+    catalogNumber INTEGER PRIMARY KEY,
+    specimenType TEXT,
+    mineral TEXT,
+    taxon TEXT,
+    verbatimDescription TEXT,
+    verbatimLocality TEXT,
+    accessionNumber INTEGER,
+    FOREIGN KEY (accessionNumber) REFERENCES Accessions(accessionNumber)
+);
+
+INSERT INTO SpecimenCatalog(specimenType, mineral, taxon, verbatimDescription, verbatimLocality, accessionNumber)
+    VALUES 
+    ('Fossil', 'Calcite', 'Ammonoidea', 'Ammonite', 'Madagascar', '1'),
+    ('Mineral', 'Quartz', 'NA', 'Quartz point', 'Arkansas', '1'),
+    ('Mineral', 'Copper', 'NA',  'Native copper', 'Michigan', '1'),
+    ('Fossil', 'Calcite', 'Otodus megalodon',  'Megalodon tooth', 'United States', '1'),
+    ('Mineral', 'Quartz', 'NA',  'Amethyst', 'Brazil', '1'),
+    ('Mineral', 'Garnet', 'NA',  'Grossular Garnet', 'Mexico', '1'),
+    ('Mineral', 'Olivine', 'NA',  'Olivine', 'Arizona', '1'),   
+    ('Mineral', 'Hydrated silica', 'NA',  'Agate', 'Botswana', '1'),
+    ('Mineral', 'Beryl', 'NA',  'Emerald', 'Russia', '1'),
+    ('Mineral', 'Zoisite', 'NA',  'Tanzanite', 'Tanzania', '1'),
+    ('Mineral', 'Sphalerite', 'NA',  'Sphalerite', 'Mexico', '1'),
+    ('Mineral', 'Flourite', 'NA',  'Flourite', 'Madagascar', '1'),
+    ('Mineral', 'Quartz', 'NA',  'Citrine', 'Brazil', '1'),
+    ('Mineral', 'Crysocolla', 'NA',  'Crysocolla', 'Arizona', '1'),
+    ('Mineral', 'Aragonite', 'NA',  'Aragonite', 'Spain', '1'),
+    ('Fossil', 'NA', 'NA',  'Amber', 'Baltic Coast', '1'),
+    ('Mineral', 'Pyrite', 'NA',  'Pyrite', 'Peru', '1'),
+    ('Fossil', 'Hydrated silica', 'NA',  'Petrified Wood', 'Arizona', '1'),
+    ('Mineraloid', 'Hydrated silica', 'NA',  'Andamuka Opal', 'Australia', '1'),
+    ('Mineral', 'Quartz', 'NA',  'Amethyst', 'Brazil', '1'),
+    ('Mineraloid', 'Hydrated silica', 'NA',  'Opal', 'Ethiopoda', '1'),
+    ('Mineral', 'Amazonite', 'NA',  'Amazonite', 'Madagascar', '1'),
+    ('Mineral', 'Quartz', 'NA',  'Smoky Quartz', 'Brazil', '1'),
+    ('Mineraloid', 'Hydrated silica', 'NA',  'Opal', 'Australia', '1')
+;
